@@ -1,0 +1,156 @@
+
+
+
+.hidden
+{
+	display:		none;
+}
+
+
+.calculator input, .calculator select
+{
+	font-size:		20pt;
+	display:		block;
+	margin-left:	2em;
+	margin-top:		1em;
+	width:			20em;
+}
+
+
+.calculator select
+{
+	width:			no;
+}
+
+
+.calculator p
+{
+	margin-left: 2em;
+}
+
+
+section
+{
+	margin-top: 3.5em;
+}
+
+
+.calculator table
+{
+	margin-left: 4em;
+	margin-right: 4em;
+	margin-top: 2em;
+	margin-bottom: 2em;
+	background-color: #ffffff;
+}
+
+
+.calculator table, .calculator th, .calculator td
+{
+	border: 1px solid #999999;
+}
+
+.calculator td
+{
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+
+
+.calculator thead, .calculator tfoot
+{
+	font-weight: bold;
+	background-color: #eeeeee;
+}
+
+
+.calculator tbody tr:hover
+{
+	background-color: #bbffff;
+}
+
+
+.calculator input[type=button]
+{
+	background-color: #f16529;
+	color: #ffffff;
+	font-weight: bold;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em;
+	border: 5px solid #e44d26;
+}
+
+
+.result
+{
+	margin-left: 4em;
+	margin-top: 2em;
+	
+	border: 1px solid #ffaa33;
+	background-color: #ffffdd;
+}
+
+.result h2
+{
+	margin-left:2em;
+	margin-right: 2em;
+}
+
+
+
+.main article
+{
+	width: 70%;
+}
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #777777;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #777777;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #777777;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #777777;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

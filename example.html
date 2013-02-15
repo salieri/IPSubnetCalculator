@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>			<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->	<html class="no-js"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		
+		<title>IP Subnet Netmask Optimizer / IP Subnet Calculator</title>
+		<meta name="description" content="Online tool for calculating optimized IP masks for subnets that do not respect A/B/C/D classes">
+		
+		<meta name="viewport" content="width=device-width">
+
+		<link rel="stylesheet" href="initializr/css/normalize.min.css">
+		<link rel="stylesheet" href="initializr/css/main.css">
+		<link rel="stylesheet" href="initializr/css/comedic-stylings-of.css">
+
+		<script src="initializr/js/vendor/modernizr-2.6.2.min.js"></script>
+	</head>
+	<body>
+
+		<div class="header-container">
+			<header class="wrapper clearfix">
+				<h1 class="title">IP Subnet Netmask Calculator</h1>
+			</header>
+		</div>
+
+		<div class="main-container">
+			<div class="main wrapper clearfix">
+
+				<article>
+					<header>
+						<h1>Calculate IP Subnets and Netmasks</h1>
+						<p>Use these tools to calculate subnets and netmasks.</p>
+					</header>
+
+					<section>
+						<form id='ip_calculate_range' class='calculator'>
+							<h2>IP Range Mask Optimizer</h2>
+							
+							<p>This tool calculates optimal netmasks for covering any range of IP addresses.
+							Depending on the range of IP addresses entered, the result can be multiple masks.</p>
+							
+							<input type='text' name='ip_calculate_range_start_ip' id='ip_calculate_range_start_ip' placeholder='IP range start value, e.g. 10.0.0.15' />
+							<input type='text' name='ip_calculate_range_end_ip' id='ip_calculate_range_end_ip' placeholder='IP range end value, e.g. 10.0.4.255' />
+							
+							<input type='button' value='Calculate' id='ip_calculate_range_button' />
+							
+							<div class='result' id='ip_calculate_range_result' style='display: none;'></div>
+						</form>
+					</section>
+
+					<section>
+						<form id='ip_calculate_cidr_mask' class='calculator'>
+							<h2>CIDR Subnet Mask Calculator</h2>
+							
+							<input type='text' name='ip_calculate_cidr_mask_ip' id='ip_calculate_cidr_mask_ip' placeholder='IP Address' />
+							
+							<select name='ip_calculate_cidr_mask_mask' id='ip_calculate_cidr_mask_mask' placeholder='CIDR Subnet Mask'>
+								<option value='' disabled selected>Select Subnet Mask</option>
+								<option value='24'>/24</option>
+								<option value='16'>/16</option>
+								<option value='8'>/8</option>
+								<option value='' disabled>----------------------</option>
+								<option value='0'>/0</option>
+								<option value='1'>/1</option>
+								<option value='2'>/2</option>
+								<option value='3'>/3</option>
+								<option value='4'>/4</option>
+								<option value='5'>/5</option>
+								<option value='6'>/6</option>
+								<option value='7'>/7</option>
+								<option value='8'>/8</option>
+								<option value='9'>/9</option>
+								<option value='10'>/10</option>
+								<option value='11'>/11</option>
+								<option value='12'>/12</option>
+								<option value='13'>/13</option>
+								<option value='14'>/14</option>
+								<option value='15'>/15</option>
+								<option value='16'>/16</option>
+								<option value='17'>/17</option>
+								<option value='18'>/18</option>
+								<option value='19'>/19</option>
+								<option value='20'>/20</option>
+								<option value='1'>/21</option>
+								<option value='2'>/22</option>
+								<option value='3'>/23</option>
+								<option value='4'>/24</option>
+								<option value='5'>/25</option>
+								<option value='6'>/26</option>
+								<option value='7'>/27</option>
+								<option value='8'>/28</option>
+								<option value='9'>/29</option>
+								<option value='0'>/20</option>
+								<option value='1'>/31</option>
+								<option value='2'>/32</option>
+							</select>
+							
+							<input type='button' value='Calculate' id='ip_calculate_cidr_mask_button' />
+							
+							<div class='result' id='ip_calculate_cidr_mask_result' style='display: none;'></div>
+						</form>
+					</section>
+
+					<section>
+						<form id='ip_calculate_mask' class='calculator'>
+							<h2>Subnet Mask Calculator</h2>
+							
+							<input type='text' name='ip_calculate_mask_ip' id='ip_calculate_mask_ip' placeholder='IP Address' />
+							<input type='text' name='ip_calculate_mask_mask' id='ip_calculate_mask_mask' placeholder='Subnet mask, e.g. 255.255.255.0' />
+							
+							<input type='button' value='Calculate' id='ip_calculate_mask_button' />
+							
+							<div class='result' id='ip_calculate_mask_result' style='display: none;'></div>
+						</form>
+					</section>
+
+				</article>
+
+			</div> <!-- #main -->
+		</div> <!-- #main-container -->
+
+		<div class="footer-container">
+			<footer class="wrapper">
+				<h3>Use for free in your project! Download <a href='IPSubnetCalculator.js'>IPSubnetCalculator.js</a></h3>
+			</footer>
+		</div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="initializr/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+		<script src="IPSubnetCalculator.js"></script>
+
+
+		<script type='text/javascript'>
+
+			$( '#ip_calculate_range_button' ).click( 
+					function()
+					{
+						var result = IPSubnetCalculator.calculate( 
+								$( '#ip_calculate_range_start_ip' ).val(),
+								$( '#ip_calculate_range_end_ip' ).val()
+							);
+							
+						if( result === null )
+						{
+							showResult( 'ip_calculate_range_result', 'Please enter IP range in the fields above' );
+						}
+						else
+						{
+							var i;
+							var msg = '<h2>Result</h2>' + 
+										'<table>' + 
+										'<thead><tr><td>IP</td><td>Prefix</td><td>Subnet Mask</td></tr></thead>' +
+										'<tfoot><tr><td>IP</td><td>Prefix</td><td>Subnet Mask</td></tr></tfoot>';
+							
+							for( i = 0; i < result.length; i++ )
+							{
+								msg += '<tr>' + 
+											'<td>' + result[ i ].ipLowStr + '</td>' + 
+											'<td>' + '/' + result[ i ].prefixSize + '</td>' + 
+											'<td>' + result[ i ].prefixMaskStr + '</td>' + 
+											"</tr>\n";								
+							}
+							
+							msg += "</tbody></table>\n";
+							
+							showResult( 'ip_calculate_range_result', msg ); 							
+						}
+					}
+				);
+			
+			
+			$( '#ip_calculate_cidr_mask_button' ).click( 
+					function()
+					{
+						var result = IPSubnetCalculator.calculateCIDRMask( 
+								$( '#ip_calculate_cidr_mask_ip' ).val(),
+								$( '#ip_calculate_cidr_mask_mask' ).val()
+							);
+							
+						if( result === null )
+						{
+							showResult( 'ip_calculate_cidr_mask_result', 'Please enter IP range in the fields above' );
+						}
+						else
+						{
+							var msg = '<h2>Result</h2>' + 
+										'<table>' + 
+										'<thead><tr><td>Address Range</td><td>Subnet Mask</td><td>Prefix Size</td></tr></thead>' +
+										'<tbody>' + 
+										'<tr>' + 
+											'<td>' + result.ipLowStr + ' - ' + result.ipHighStr + '</td>' +
+											'<td>' + result.prefixMaskStr + '</td>' +
+											'<td>' + result.prefixSize + '</td>' +
+										'</tr>' +
+										'</tbody></table>';
+
+							showResult( 'ip_calculate_cidr_mask_result', msg );						
+						}
+					}
+				);
+			
+			
+			$( '#ip_calculate_mask_button' ).click( 
+					function()
+					{
+						var result = IPSubnetCalculator.calculateMask( 
+								$( '#ip_calculate_mask_ip' ).val(),
+								$( '#ip_calculate_mask_mask' ).val()
+							);
+							
+						if( result === null )
+						{
+							showResult( 'ip_calculate_mask_result', 'Please enter IP range in the fields above' );
+						}
+						else
+						{
+							var msg = '<h2>Result</h2>' + 
+										'<table>' + 
+										'<thead><tr><td>Address Range</td><td>Subnet Mask</td><td>Prefix Size</td></tr></thead>' +
+										'<tbody>' + 
+										'<tr>' + 
+											'<td>' + result.ipLowStr + ' - ' + result.ipHighStr + '</td>' +
+											'<td>' + result.prefixMaskStr + '</td>' +
+											'<td>' + result.prefixSize + '</td>' +
+										'</tr>' +
+										'</tbody></table>';
+
+							showResult( 'ip_calculate_mask_result', msg );						
+						}
+					}
+				);
+			
+			
+			
+			function showResult( elementName, msg )
+			{
+				$( '#' + elementName ).html( msg );
+				$( '#' + elementName ).slideDown( 'fast' );
+			}
+			
+			
+		</script>
+
+		
+	</body>
+</html>
