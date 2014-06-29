@@ -1,8 +1,16 @@
 {
 	"name"		: "ip-subnet-calculator",
-	"version"	: "1.0.0",
 
 	"main"		: "lib/ip-subnet-calculator.js",
+	"keywords"	: [ "ip", "subnet", "network", "netmask", "calculator" ],
+	"authors"	: [ "Aleksi Asikainen" ],
+	"homepage"	: "https://github.com/franksrevenge/IPSubnetCalculator",
+	"license"	: "Apache-2.0",
+
+	"repository"			: {
+			"type"	: "git",
+			"url"	: "git://github.com/franksrevenge/IPSubnetCalculator.git"
+	},
 
 	"ignore"	: [
 			"resources",
