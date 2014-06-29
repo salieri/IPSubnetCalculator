@@ -14,11 +14,8 @@
 		
 		<meta name="viewport" content="width=device-width">
 
-		<link rel="stylesheet" href="initializr/css/normalize.min.css">
-		<link rel="stylesheet" href="initializr/css/main.css">
-		<link rel="stylesheet" href="initializr/css/comedic-stylings-of.css">
-
-		<script src="initializr/js/vendor/modernizr-2.6.2.min.js"></script>
+		<link rel="stylesheet" href="resources/css/main.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
 	</head>
 	<body>
 
@@ -34,7 +31,8 @@
 				<article>
 					<header>
 						<h1>Calculate IP Subnets and Netmasks</h1>
-						<p>Use these tools to calculate subnets and netmasks.</p>
+						<p>Use these tools to calculate subnets and netmasks. Source at <a href='https://github.com/franksrevenge/IPSubnetCalculator'>GitHub</a>.</p>
+						<p>Compatible with <a href='http://nodejs.org/'>Node.js</a> (Common-JS like), <a href='http://requirejs.org/'>Require.js</a> (AMD), and direct use. See <a href='https://github.com/franksrevenge/IPSubnetCalculator/blob/master/README.md'>readme</a> for instructions.</p>
 					</header>
 
 					<section>
@@ -126,126 +124,10 @@
 
 		<div class="footer-container">
 			<footer class="wrapper">
-				<h3>Use for free in your project! Download <a href='IPSubnetCalculator.js'>IPSubnetCalculator.js</a></h3>
+				<h3>Source at GitHub: <a href='https://github.com/franksrevenge/IPSubnetCalculator'>IPSubnetCalculator</a></h3>
 			</footer>
 		</div>
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="initializr/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-		<script src="IPSubnetCalculator.js"></script>
-
-
-		<script type='text/javascript'>
-
-			$( '#ip_calculate_range_button' ).click( 
-					function()
-					{
-						var result = IPSubnetCalculator.calculate( 
-								$( '#ip_calculate_range_start_ip' ).val(),
-								$( '#ip_calculate_range_end_ip' ).val()
-							);
-							
-						if( result === null )
-						{
-							showResult( 'ip_calculate_range_result', 'Please enter IP range in the fields above' );
-						}
-						else
-						{
-							var i;
-							var msg = '<h2>Result</h2>' + 
-										'<table>' + 
-										'<thead><tr><td>IP</td><td>Prefix</td><td>Subnet Mask</td></tr></thead>' +
-										'<tfoot><tr><td>IP</td><td>Prefix</td><td>Subnet Mask</td></tr></tfoot>';
-							
-							for( i = 0; i < result.length; i++ )
-							{
-								msg += '<tr>' + 
-											'<td>' + result[ i ].ipLowStr + '</td>' + 
-											'<td>' + '/' + result[ i ].prefixSize + '</td>' + 
-											'<td>' + result[ i ].prefixMaskStr + '</td>' + 
-											"</tr>\n";								
-							}
-							
-							msg += "</tbody></table>\n";
-							
-							showResult( 'ip_calculate_range_result', msg ); 							
-						}
-					}
-				);
-			
-			
-			$( '#ip_calculate_cidr_mask_button' ).click( 
-					function()
-					{
-						var result = IPSubnetCalculator.calculateCIDRMask( 
-								$( '#ip_calculate_cidr_mask_ip' ).val(),
-								$( '#ip_calculate_cidr_mask_mask' ).val()
-							);
-							
-						if( result === null )
-						{
-							showResult( 'ip_calculate_cidr_mask_result', 'Please enter IP range in the fields above' );
-						}
-						else
-						{
-							var msg = '<h2>Result</h2>' + 
-										'<table>' + 
-										'<thead><tr><td>Address Range</td><td>Subnet Mask</td><td>Prefix Size</td></tr></thead>' +
-										'<tbody>' + 
-										'<tr>' + 
-											'<td>' + result.ipLowStr + ' - ' + result.ipHighStr + '</td>' +
-											'<td>' + result.prefixMaskStr + '</td>' +
-											'<td>' + result.prefixSize + '</td>' +
-										'</tr>' +
-										'</tbody></table>';
-
-							showResult( 'ip_calculate_cidr_mask_result', msg );						
-						}
-					}
-				);
-			
-			
-			$( '#ip_calculate_mask_button' ).click( 
-					function()
-					{
-						var result = IPSubnetCalculator.calculateMask( 
-								$( '#ip_calculate_mask_ip' ).val(),
-								$( '#ip_calculate_mask_mask' ).val()
-							);
-							
-						if( result === null )
-						{
-							showResult( 'ip_calculate_mask_result', 'Please enter IP range in the fields above' );
-						}
-						else
-						{
-							var msg = '<h2>Result</h2>' + 
-										'<table>' + 
-										'<thead><tr><td>Address Range</td><td>Subnet Mask</td><td>Prefix Size</td></tr></thead>' +
-										'<tbody>' + 
-										'<tr>' + 
-											'<td>' + result.ipLowStr + ' - ' + result.ipHighStr + '</td>' +
-											'<td>' + result.prefixMaskStr + '</td>' +
-											'<td>' + result.prefixSize + '</td>' +
-										'</tr>' +
-										'</tbody></table>';
-
-							showResult( 'ip_calculate_mask_result', msg );						
-						}
-					}
-				);
-			
-			
-			
-			function showResult( elementName, msg )
-			{
-				$( '#' + elementName ).html( msg );
-				$( '#' + elementName ).slideDown( 'fast' );
-			}
-			
-			
-		</script>
-
-		
+		<script data-main='resources/js/app'  src='https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js'></script>
 	</body>
 </html>

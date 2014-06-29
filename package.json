@@ -1,0 +1,18 @@
+{
+	"author"				: "Aleksi Asikainen",
+	"name"					: "ip-subnet-calculator",
+	"description"			: "Calculate optimal subnet masks for standard and non-standard IP ranges",
+	"homepage"				: "https://github.com/franksrevenge/IPSubnetCalculator",
+	"version"				: "1.0.0",
+	"main"					: "lib/ip-subnet-calculator.js",
+	"keywords"				: [ "ip", "subnet", "network", "netmask" ],
+	"engines"				: { "node" : "*" },
+	"dependencies"			: {},
+	"devDependencies"		: {},
+	"optionalDependencies"	: {},
+	"license"				: "Apache 2.0",
+	"repository"			: {
+			"type"	: "git",
+			"url"	: "git://github.com/franksrevenge/IPSubnetCalculator.git"
+	}
+}

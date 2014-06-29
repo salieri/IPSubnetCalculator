@@ -1,0 +1,18 @@
+{
+	"name"		: "ip-subnet-calculator",
+	"version"	: "1.0.0",
+
+	"main"		: "lib/ip-subnet-calculator.js",
+
+	"ignore"	: [
+			"resources",
+			".gitignore",
+			"bower.json",
+			"index.html",
+			"package.json",
+			"README.md"
+			],
+
+	"dependencies"		: {},
+	"devDependencies"	: {}
+}
