@@ -140,6 +140,24 @@ Calculates a CIDR prefix from subnet mask.
 The function returns an object containing full description of the IP range, as described in `IpSubnetCalculator.calculate()`.
 
 
+## Conversion Functions ##
+
+### IpSubnetCalculator.toDecimal( ip ) ###
+
+Calculates a decimal integer from an string IP address.
+
+*ip* (string) IP address in string format
+
+The function returns a decimal representation of an IP address as an integer.
+
+
+### IpSubnetCalculator.toString( integer ) ###
+
+*integer* (integer) Decimal representation of an IP address.
+
+The function returns an IP address as a string.
+
+
 
 License
 -------
