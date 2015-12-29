@@ -162,6 +162,6 @@ The function returns an IP address as a string.
 License
 -------
 
-[Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+[MIT](http://opensource.org/licenses/MIT)
 
 

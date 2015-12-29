@@ -5,7 +5,7 @@
 	"keywords"	: [ "ip", "subnet", "network", "netmask", "calculator" ],
 	"authors"	: [ "Aleksi Asikainen" ],
 	"homepage"	: "https://github.com/franksrevenge/IPSubnetCalculator",
-	"license"	: "Apache-2.0",
+	"license"	: "MIT",
 
 	"repository"			: {
 			"type"	: "git",
