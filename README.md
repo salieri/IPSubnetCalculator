@@ -5,6 +5,9 @@ JavaScript class for calculating optimal subnet masks for non-standard IP ranges
 
 [View demo](http://franksrevenge.github.io/IPSubnetCalculator/)
 
+[![Build Status](https://travis-ci.org/franksrevenge/IPSubnetCalculator.svg?branch=master)](https://travis-ci.org/franksrevenge/IPSubnetCalculator)
+[![Dependency Status](https://david-dm.org/franksrevenge/IPSubnetCalculator/status.png)](https://david-dm.org/franksrevenge/IPSubnetCalculator#info=dependencies&view=table)
+[![Dev Dependency Status](https://david-dm.org/franksrevenge/IPSubnetCalculator/dev-status.png)](https://david-dm.org/franksrevenge/IPSubnetCalculator#info=devDependencies&view=table)
 
 What does it do?
 ----------------
