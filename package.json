@@ -37,8 +37,7 @@
     "url": "git://github.com/franksrevenge/IPSubnetCalculator.git"
   },
   "scripts": {
-    "test": "mocha",
-    "test-coverage": "bash bin/coverage.sh"
+    "test": "mocha"
   },
   "tonicExampleFilename": "examples/tonic.js"
 }
