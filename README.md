@@ -40,7 +40,11 @@ Node.js
 ```javascript
 var IpSubnetCalculator = require( 'ip-subnet-calculator' );
 
+console.log( IpSubnetCalculator.isIp( '127.0.0.1' ) ); // "true"
+console.log( IpSubnetCalculator.toDecimal( '127.0.0.1' ) ); // "2130706433"
+
 console.log( IpSubnetCalculator.calculate( '5.4.3.21', '6.7.8.9' ) );
+
 ```
 
 
@@ -52,7 +56,10 @@ require( [ 'ip-subnet-calculator' ],
 
 function( IpSubnetCalculator )
 {
-   console.log( IpSubnetCalculator.calculate( '5.4.3.21', '6.7.8.9' ) ); 
+    console.log( IpSubnetCalculator.isIp( '127.0.0.1' ) ); // "true"
+    console.log( IpSubnetCalculator.toDecimal( '127.0.0.1' ) ); // "2130706433"
+    
+    console.log( IpSubnetCalculator.calculate( '5.4.3.21', '6.7.8.9' ) ); 
 } );
 ```
 
@@ -61,9 +68,12 @@ Direct browser use
 ------------------
 
 ```html
-<script src='IpSubnetCalculator.js'></script>
+<script src='lib/ip-subnet-calculator.js'></script>
 
 <script>
+    console.log( IpSubnetCalculator.isIp( '127.0.0.1' ) ); // "true"
+    console.log( IpSubnetCalculator.toDecimal( '127.0.0.1' ) ); // "2130706433"
+    
     console.log( IpSubnetCalculator.calculate( '5.4.3.21', '6.7.8.9' ) );
 </script>
 ```
@@ -140,23 +150,47 @@ Calculates a CIDR prefix from subnet mask.
 The function returns an object containing full description of the IP range, as described in `IpSubnetCalculator.calculate()`.
 
 
+## Test Functions ##
+
+### IpSubnetCalculator.isIp( ipStr ) ###
+
+Tests whether string is an IP address.
+
+*ipStr* (string) A string
+
+The function returns a `true` if the string is an IP address, `false` otherwise.
+
+### IpSubnetCalculator.isDecimalIp( ipNum ) ###
+
+Tests whether string is an IP address.
+
+*ipNum* (int) A number
+
+The function returns a `true` if the number is an IP address, `false` otherwise.
+
+
 ## Conversion Functions ##
 
 ### IpSubnetCalculator.toDecimal( ip ) ###
 
 Calculates a decimal integer from an string IP address.
 
-*ip* (string) IP address in string format
+*ip* (string|number) IP address in string format
 
-The function returns a decimal representation of an IP address as an integer.
+The function returns a decimal representation of an IP address as an integer. If a valid numeric representation 
+of an IP is passed to this function, it is returned unmodified.
+
+If an invalid value is passed to the function, it will `throw` an `Error` object.
 
 
-### IpSubnetCalculator.toString( integer ) ###
+### IpSubnetCalculator.toString( num ) ###
 
-*integer* (integer) Decimal representation of an IP address.
+*num* (integer|string) Decimal representation of an IP address.
 
-The function returns an IP address as a string.
+The function returns an IP address as a string. If a valid string representation of an IP is passed to this function,
+it is returned unmodified.
 
+If an invalid value is passed to the function, it will `throw` an `Error` object.
 
 
 License

@@ -1,18 +1,39 @@
 {
-	"author"				: "Aleksi Asikainen",
-	"name"					: "ip-subnet-calculator",
-	"description"			: "Calculate optimal subnet masks for standard and non-standard IP ranges",
-	"homepage"				: "https://github.com/franksrevenge/IPSubnetCalculator",
-	"version"				: "1.0.3",
-	"main"					: "lib/ip-subnet-calculator.js",
-	"keywords"				: [ "ip", "subnet", "network", "netmask", "calculator" ],
-	"engines"				: { "node" : "*" },
-	"dependencies"			: {},
-	"devDependencies"		: {},
-	"optionalDependencies"	: {},
-	"license"				: "MIT",
-	"repository"			: {
-			"type"	: "git",
-			"url"	: "git://github.com/franksrevenge/IPSubnetCalculator.git"
-	}
+  "author": "Aleksi Asikainen",
+  "name": "ip-subnet-calculator",
+  "description": "Calculate optimal subnet masks for standard and non-standard IP ranges",
+  "homepage": "https://github.com/franksrevenge/IPSubnetCalculator",
+  "version": "1.1.0",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/ip-subnet-calculator.js",
+  "keywords": [
+    "ip",
+    "subnet",
+    "network",
+    "netmask",
+    "calculator",
+    "mask"
+  ],
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {},
+  "optionalDependencies": {},
+  "license": "MIT",
+  "devDependencies": {
+    "istanbul": "^0.4.3",
+    "lodash": "4.12.x",
+    "mocha": "2.4.x",
+    "mocha-istanbul": "^0.2.0",
+    "should": "8.3.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/franksrevenge/IPSubnetCalculator.git"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
 }
