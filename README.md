@@ -5,9 +5,8 @@ JavaScript class for calculating optimal subnet masks for non-standard IP ranges
 
 [View demo](http://franksrevenge.github.io/IPSubnetCalculator/)
 
-[![Build Status](https://travis-ci.org/franksrevenge/IPSubnetCalculator.svg?branch=master)](https://travis-ci.org/franksrevenge/IPSubnetCalculator)
-[![Dependency Status](https://david-dm.org/franksrevenge/IPSubnetCalculator/status.png)](https://david-dm.org/franksrevenge/IPSubnetCalculator#info=dependencies&view=table)
-[![Dev Dependency Status](https://david-dm.org/franksrevenge/IPSubnetCalculator/dev-status.png)](https://david-dm.org/franksrevenge/IPSubnetCalculator#info=devDependencies&view=table)
+[![Build Status](https://travis-ci.org/franksrevenge/IPSubnetCalculator.svg?branch=master)](https://travis-ci.org/franksrevenge/IPSubnetCalculator) [![Coverage Status](https://coveralls.io/repos/github/franksrevenge/IPSubnetCalculator/badge.svg?branch=master)](https://coveralls.io/github/franksrevenge/IPSubnetCalculator?branch=master) [![Dependency Status](https://david-dm.org/franksrevenge/IPSubnetCalculator/status.svg)](https://david-dm.org/franksrevenge/IPSubnetCalculator#info=dependencies&view=table) [![Dev Dependency Status](https://david-dm.org/franksrevenge/IPSubnetCalculator/dev-status.svg)](https://david-dm.org/franksrevenge/IPSubnetCalculator#info=devDependencies&view=table)
+
 
 What does it do?
 ----------------

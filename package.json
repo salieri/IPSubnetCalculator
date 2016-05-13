@@ -3,7 +3,7 @@
   "name": "ip-subnet-calculator",
   "description": "Calculate optimal subnet masks for standard and non-standard IP ranges",
   "homepage": "https://github.com/franksrevenge/IPSubnetCalculator",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "files": [
     "lib",
     "examples"
@@ -38,7 +38,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "test-coverage": "node_modules/.bin/istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js --verbose"
+    "test-coverage": "bash bin/coverage.sh"
   },
   "tonicExampleFilename": "examples/tonic.js"
 }
