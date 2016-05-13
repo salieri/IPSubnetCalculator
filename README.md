@@ -86,9 +86,9 @@ API
 
 Calculates an optimal set of IP masks for the given IP address range.
 
-*ipStart* (string) Lowest IP in the range to be calculated in string format (`123.123.123.123`)
+*ipStart* (string|number) Lowest IP in the range to be calculated in string (`123.123.123.0`) or numeric (`2071689984`) format.
 
-*ipEnd* (string) Highest IP (inclusive) in the range to be calculated in string format (`123.123.123.12`)
+*ipEnd* (string|number) Highest IP (inclusive) in the range to be calculated in string (`123.123.123.255`) or numeric (`2071690239`) format.
 
 The function returns `null` in case of an error. Otherwise, an array containing one or more subnet
 masks is returned:
@@ -132,7 +132,7 @@ Each object in question contain the following properties:
 
 Calculates a subnet mask from CIDR prefix.
 
-*ip* (string) IP address in string format
+*ip* (string|number) IP address in string or numeric format
 
 *prefixSize* Number of relevant bits in the subnet mask
 
@@ -143,9 +143,9 @@ The function returns an object containing full description of the IP range, as d
 
 Calculates a CIDR prefix from subnet mask.
 
-*ip* (string) IP address in string format
+*ip* (string|number) IP address in string or numeric format
 
-*subnetMask* IP subnet mask in string format
+*subnetMask* (string|number) IP subnet mask in string or numeric format
 
 The function returns an object containing full description of the IP range, as described in `IpSubnetCalculator.calculate()`.
 
@@ -164,7 +164,7 @@ The function returns a `true` if the string is an IP address, `false` otherwise.
 
 Tests whether string is an IP address.
 
-*ipNum* (int) A number
+*ipNum* (number) A number
 
 The function returns a `true` if the number is an IP address, `false` otherwise.
 
@@ -185,7 +185,7 @@ If an invalid value is passed to the function, it will `throw` an `Error` object
 
 ### IpSubnetCalculator.toString( num ) ###
 
-*num* (integer|string) Decimal representation of an IP address.
+*num* (number|string) Decimal representation of an IP address.
 
 The function returns an IP address as a string. If a valid string representation of an IP is passed to this function,
 it is returned unmodified.
