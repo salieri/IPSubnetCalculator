@@ -275,6 +275,19 @@ describe( 'IP Subnet Calculator',
 			);
 
 
+		it( 'should calculate masks for non-standard ranges',
+				function()
+				{
+					var ranges = ipsc.calculate( '10.0.0.0', '10.0.1.1' );
+
+					ranges[ 0 ].ipLowStr.should.be.exactly( '10.0.0.0' );
+					ranges[ 0 ].ipHighStr.should.be.exactly( '10.0.0.255' );
+					ranges[ 1 ].ipLowStr.should.be.exactly( '10.0.1.0' );
+					ranges[ 1 ].ipHighStr.should.be.exactly( '10.0.1.1' );
+				}
+		);
+
+
 		it( 'should reject requests with invalid IPs',
 				function()
 				{
