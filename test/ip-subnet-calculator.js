@@ -295,6 +295,60 @@ describe( 'IP Subnet Calculator',
 				}
 			);
 
+
+		it( 'should fail calculate() if start IP is higher than end IP',
+				function()
+				{
+					should.equal( ipsc.calculate( '10.1.0.0', '10.0.0.0' ), null );
+				}
+		);
+
+
+		it( 'should fail calculateSubnetMask() if IP is invalid',
+				function()
+				{
+					should.equal( ipsc.calculateSubnetMask( 'helloworld', 24 ), null );
+				}
+		);
+
+
+		it( 'should fail calculateCIDRPrefix() if IP is invalid',
+				function()
+				{
+					should.equal( ipsc.calculateCIDRPrefix( 'helloworld', '255.255.255.255' ), null );
+				}
+		);
+
+
+		it( 'should pass decimal IPs through toDecimal()',
+				function()
+				{
+					ipsc.toDecimal( 4026531840 ).should.be.exactly( 4026531840 );
+				}
+			);
+
+
+		it( 'should pass string IPs through toString()',
+				function()
+				{
+					ipsc.toString( '127.0.0.1' ).should.be.exactly( '127.0.0.1' );
+				}
+		);
+
+
+		it( 'should reject converting invalid numeric IPs to strings',
+				function()
+				{
+					(
+						function()
+						{
+							ipsc.toString( -1 );
+						}
+					)
+					.should.throw();
+				}
+		);
+
 	}
 );
 
