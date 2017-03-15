@@ -3,7 +3,7 @@
   "name": "ip-subnet-calculator",
   "description": "Calculate optimal subnet masks for standard and non-standard IP ranges",
   "homepage": "https://github.com/franksrevenge/IPSubnetCalculator",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "files": [
     "lib",
     "examples"
