@@ -164,7 +164,7 @@ The function returns a `true` if the string is an IP address, `false` otherwise.
 
 ### IpSubnetCalculator.isDecimalIp( ipNum ) ###
 
-Tests whether string is an IP address.
+Tests whether `ipNum` is a decimal IP address.
 
 *ipNum* (number) A number
 
